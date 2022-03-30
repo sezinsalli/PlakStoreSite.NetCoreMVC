@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlakStoreSite", "PlakStoreSite\PlakStoreSite.csproj", "{545390CD-7F67-421E-971D-49EE78C58709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlakStore.Model", "PlakStore.Model\PlakStore.Model.csproj", "{4B960416-6CBE-4323-80F5-F557C44811B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlakStoreBusinessLayer", "PlakStoreBusinessLayer\PlakStoreBusinessLayer.csproj", "{5AB9BB87-79A0-4A38-8004-BE8934B55550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlakStoreCore", "PlakStoreCore\PlakStoreCore.csproj", "{683F0384-0B6E-411F-816F-F270BB26C6C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlakStoreDataAccessLayer", "PlakStoreDataAccessLayer\PlakStoreDataAccessLayer.csproj", "{EA514131-578F-44E4-9D37-6DF301E1676F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlakStoreViewModel", "PlakStoreViewModel\PlakStoreViewModel.csproj", "{EB0A8E9F-24DC-43F9-B43F-E57EC802F4A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{545390CD-7F67-421E-971D-49EE78C58709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545390CD-7F67-421E-971D-49EE78C58709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545390CD-7F67-421E-971D-49EE78C58709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545390CD-7F67-421E-971D-49EE78C58709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B960416-6CBE-4323-80F5-F557C44811B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B960416-6CBE-4323-80F5-F557C44811B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B960416-6CBE-4323-80F5-F557C44811B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B960416-6CBE-4323-80F5-F557C44811B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB9BB87-79A0-4A38-8004-BE8934B55550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB9BB87-79A0-4A38-8004-BE8934B55550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB9BB87-79A0-4A38-8004-BE8934B55550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB9BB87-79A0-4A38-8004-BE8934B55550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{683F0384-0B6E-411F-816F-F270BB26C6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683F0384-0B6E-411F-816F-F270BB26C6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683F0384-0B6E-411F-816F-F270BB26C6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683F0384-0B6E-411F-816F-F270BB26C6C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA514131-578F-44E4-9D37-6DF301E1676F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA514131-578F-44E4-9D37-6DF301E1676F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA514131-578F-44E4-9D37-6DF301E1676F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA514131-578F-44E4-9D37-6DF301E1676F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0A8E9F-24DC-43F9-B43F-E57EC802F4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0A8E9F-24DC-43F9-B43F-E57EC802F4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0A8E9F-24DC-43F9-B43F-E57EC802F4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0A8E9F-24DC-43F9-B43F-E57EC802F4A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DF320BB-A791-4F1E-821F-5BA13A1EDC9E}
+	EndGlobalSection
+EndGlobal
