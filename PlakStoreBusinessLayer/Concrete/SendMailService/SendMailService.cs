@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlakStoreDataAccessLayer.Concreate.Repository
+namespace PlakStoreBusinessLayer.Concrete.ResultServiceBLL
 {
-    class Class2
+    class SendMailService
     {
+        
     }
 }

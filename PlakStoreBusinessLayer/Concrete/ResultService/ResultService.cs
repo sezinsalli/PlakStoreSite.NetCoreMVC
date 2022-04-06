@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlakStoreDataAccessLayer.Concreate.Repository
+namespace PlakStoreBusinessLayer.Concrete.NewFolder2
 {
-    class Class3
+    class ResultService
     {
     }
 }
