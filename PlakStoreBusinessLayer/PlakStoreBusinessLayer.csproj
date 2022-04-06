@@ -23,4 +23,9 @@
     <ProjectReference Include="..\PlakStoreViewModel\PlakStoreViewModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+
 </Project>
