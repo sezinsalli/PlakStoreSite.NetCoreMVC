@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlakStoreViewModel.CartViewModels
 {
-    public class CartItem
+    public class CartItem//ÜRÜN
     {
         public int ID { get; set; }
         public string Title { get; set; }

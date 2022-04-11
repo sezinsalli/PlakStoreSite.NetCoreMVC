@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PlakStoreBusinessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,14 @@ namespace PlakStoreBusinessLayer.Concrete.DependencyInjection
     {
         public static void AddScopeBLL(this IServiceCollection services)
         {
-           
+            services.AddScopeBLL();
+            services.AddScoped<IAlbumBLL, AlbumService>();
+            services.AddScoped<IArtistBLL, ArtistService>();
+            services.AddScoped<IUserBLL, UserService>();
+            services.AddScoped<IGenreBLL, GenreService>();
+            services.AddScoped<IOrderBLL, OrderService>();
+
+
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PlakStoreDataAccessLayer.Concreate.Repository
 {
-    class AlbumRepository : EFRepositoryBase<Album, PlakStoreDbContext>, IUserDAL
+    class AlbumRepository : EFRepositoryBase<Album, PlakStoreDbContext>, IAlbumDAL
     {
         public AlbumRepository(PlakStoreDbContext context) : base(context)
         {

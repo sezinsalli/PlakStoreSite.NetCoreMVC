@@ -21,8 +21,4 @@
     <ProjectReference Include="..\PlakStore.Model\PlakStore.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ConcreAte\DependencyInjection\" />
-  </ItemGroup>
-
 </Project>

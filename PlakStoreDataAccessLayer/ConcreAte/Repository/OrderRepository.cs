@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PlakStoreDataAccessLayer.Repository
 {
-    class OrderRepository : EFRepositoryBase<Order, PlakStoreDbContext>, IUserDAL
+    class OrderRepository : EFRepositoryBase<Order, PlakStoreDbContext>, IOrderDAL
     {
         public OrderRepository(PlakStoreDbContext context) : base(context)
         {

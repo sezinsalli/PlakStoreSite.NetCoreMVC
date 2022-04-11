@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlakStoreViewModel.CartViewModels
 {
-    public class Cart
+    public class Cart//SEPET
     {
         private static Dictionary<int, CartItem> basket = new Dictionary<int, CartItem>();
         public List<CartItem> GetCartItems => basket.Values.ToList();
