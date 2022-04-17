@@ -60,10 +60,12 @@ namespace PlakStoreBusinessLayer.Concrete
 
         public ResultService<bool> CheckUserForLogin(string email, string password)
         {
-            ResultService<bool> result = new ResultService<bool>();
-            User user = userRepository.Get(a => a.Email == email && a.Password == password && a.ısActive);
+            ResultService<bool> result = new ResultService<bool>(); 
+            
+            User user = userRepository.Get(a => a.Email == email && a.Password == password && a.ısActive);//is active true ıse 
             if (user == null)
             {
+                //eger boş ise error dön
                 result.AddError("Login Hatası", "Login Başarısız");
                 return result;
             }

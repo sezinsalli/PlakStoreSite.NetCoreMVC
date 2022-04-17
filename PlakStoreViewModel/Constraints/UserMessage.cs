@@ -8,6 +8,7 @@ namespace PlakStoreViewModel.Constraints
 {
     public class UserMessage
     {
+        //const yapılar sabıttır  statıctır newlenmezler
         public const string LoginMessage = "Kullanıcı bilgilerinizi kontrol ediniz";
     }
 }

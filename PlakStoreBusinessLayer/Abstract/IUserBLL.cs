@@ -15,5 +15,6 @@ namespace PlakStoreBusinessLayer.Abstract
 
         // eger kontrollerda metod olusturursam bu sekılde metod olusutururm
         ResultService<bool> ActivedUser(Guid guid);
+        ResultService<bool> CheckUserForLogin(string email, string password);
     }
 }
