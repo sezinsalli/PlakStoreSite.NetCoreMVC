@@ -27,9 +27,17 @@ namespace PlakStoreSite.Controllers
             if (ModelState.IsValid)
             {
                 //post edılen data dogru data ıse
-                ResultService<UserCreateVM> resultService = userService.Insert(user);
+                ResultService<UserCreateVM> resultService = userService.Insert(user);//ınsert ıslemı yaptık ınsert ıslemı yaparken maıl de attık.
+                return RedirectToAction(nameof(Login),nameof(HomeController));
 
             }
+            return View();
+        }
+        public IActionResult ActivatedUser(Guid guid)
+        {
+            //burada bır guıd ım var bu guıd ı bll'e yollacagım
+            //önce burada bunu olusturup sonra ı user bll 'e gıdıp metodu tanımlayacagım
+            ResultService<bool> result = userService.ActivedUser(guid);
             return View();
         }
         public IActionResult Login()
