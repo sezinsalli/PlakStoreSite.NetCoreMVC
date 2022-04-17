@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PlakStoreBusinessLayer.Concrete
 {
-    class GenreService : IGenreBLL
+    public class GenreService : IGenreBLL
     {
     }
 }

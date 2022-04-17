@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PlakStoreBusinessLayer.Concrete
 {
-    class OrderService : IOrderBLL
+    public class OrderService : IOrderBLL
     {
     }
 }

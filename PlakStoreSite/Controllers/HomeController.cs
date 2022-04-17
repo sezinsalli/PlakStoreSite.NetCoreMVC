@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PlakStoreBusinessLayer.Abstract;
+using PlakStoreBusinessLayer.Concrete;
 using PlakStoreBusinessLayer.Concrete.NewFolder2;
 using PlakStoreViewModel.AlbumVıewModels;
 using System;
@@ -18,16 +19,28 @@ namespace PlakStoreSite.Controllers
         }
         public IActionResult Index()
         {
-            ResultService<List<SingleAlbumVM>> albumResult = albumService.GetSingleAlbums();
-            if (!albumResult.HasError)
+            ResultService <List< SingleAlbumVM>>
+            albumresult = albumService.GetSingleAlbums();
+            if (!albumresult.HasError) 
             {
-                return View(albumResult.Data);
+                //hatasız ıse
+                return View(albumresult.Data);
             }
             else
             {
-                ViewBag.Message = albumResult.Errors[0].ErrorMessage;
-                return View();
+                //hatası var ıse hata mesajı bas vıewbag ıle
+                ViewBag.Message = albumresult.Errors[0].ErrorMessage;
             }
+            return View();
+            
+        }
+        public IActionResult AlbumStore()//Layoutlu bır album store olusturduk.
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
         }
     }
 }

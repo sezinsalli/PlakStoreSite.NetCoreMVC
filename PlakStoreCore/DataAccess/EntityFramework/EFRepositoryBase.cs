@@ -29,22 +29,7 @@ namespace PlakStoreCore.DataAccess.EntityFramework
             return null;
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
-        {
-            return context.Set<TEntity>().Where(filter).MyInclude(includes).SingleOrDefault();
-        }
-
-        public ICollection<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] includes)
-        {
-            if (filter == null)
-            {
-                return context.Set<TEntity>().MyInclude(includes).ToList();
-            }
-            else
-            {
-                return context.Set<TEntity>().Where(filter).MyInclude(includes).ToList();
-            }
-        }
+       
 
         public int Remove(TEntity entity)
         {
@@ -60,6 +45,22 @@ namespace PlakStoreCore.DataAccess.EntityFramework
                 return entity;
             }
             return null;
+        }
+        public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
+        {
+            return context.Set<TEntity>().Where(filter).MyInclude(includes).SingleOrDefault();
+        }
+
+        public ICollection<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] includes)
+        {
+            if (filter == null)
+            {
+                return context.Set<TEntity>().MyInclude(includes).ToList();
+            }
+            else
+            {
+                return context.Set<TEntity>().Where(filter).MyInclude(includes).ToList();
+            }
         }
     }
 }

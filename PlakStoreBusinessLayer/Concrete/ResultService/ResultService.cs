@@ -8,6 +8,7 @@ namespace PlakStoreBusinessLayer.Concrete.NewFolder2
 {
     public class ResultService<T>
     {
+        //album servıce e bak
         public ResultService()
         {
             Errors = new List<ErrorItem>();

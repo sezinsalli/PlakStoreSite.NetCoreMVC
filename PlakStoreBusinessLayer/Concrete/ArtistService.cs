@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PlakStoreBusinessLayer.Concrete
 {
-    class ArtistService : IArtistBLL
+    public class ArtistService : IArtistBLL
     {
     }
 }

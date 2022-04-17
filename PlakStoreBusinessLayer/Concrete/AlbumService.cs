@@ -15,6 +15,9 @@ namespace PlakStoreBusinessLayer.Concrete
     public class AlbumService : IAlbumBLL
     {
         IAlbumDAL albumDAL;
+
+        
+
         public AlbumService(IAlbumDAL albumDAL)
         {
             this.albumDAL = albumDAL;
@@ -62,6 +65,7 @@ namespace PlakStoreBusinessLayer.Concrete
 
         public ResultService<List<SingleAlbumVM>> GetSingleAlbums()
         {
+            //Resuult servıceden gelen
             ResultService<List<SingleAlbumVM>> resultService = new ResultService<List<SingleAlbumVM>>();
             try
             {
