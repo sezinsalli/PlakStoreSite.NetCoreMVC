@@ -98,7 +98,7 @@ namespace PlakStoreBusinessLayer.Concrete
                     userResult.AddError("Ekleme Hatasi", "ekleme başarılı değil");
                     return userResult;
                 }
-
+                //ekleme yapıldıysa ve basarılı ıse SEND MAIL SERVICE STATIC OLDUGU ICIN DIREK GELICEK NEWLEMEYE IHTIYAC YOK
                 bool isSend = SendMailService.SendMail($"{addedUser.FirstName} {addedUser.LastName}", addedUser.Email, addedUser.ActivationCode);
                 if (!isSend)
                 {

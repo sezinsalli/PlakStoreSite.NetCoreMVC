@@ -15,7 +15,7 @@ namespace PlakStoreBusinessLayer.Concrete.ResultServiceBLL
             MailMessage msg = new MailMessage();
             msg.To.Add(userMailAddress);
             msg.Subject = "Plak Dükkani Activasyon Maili";
-            msg.IsBodyHtml = true;
+            msg.IsBodyHtml = true; //bosysı olacak
             msg.Body = string.Format("<!DOCTYPE html> <html> <head> <meta charset='utf-8'/> <title></title> </head> <body> <h1> Aktivasyon Maili </h1> <p> Merhaba {0} </p> <p> Sitemize Kayıt Olduğunuz İçin Teşekkür Ederiz </p> <br /> <p> Kayıtınızı aktifleştirmek için <a href='http://localhost:33077/User/ActivedUser/{1}'>linke</a> tıklayınız. </p> </body> </html>", userName, activationCode);
 
             msg.From = new MailAddress("cinemasystem@sinemamekani.com");

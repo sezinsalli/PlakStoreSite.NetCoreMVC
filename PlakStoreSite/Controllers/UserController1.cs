@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PlakStoreBusinessLayer.Abstract;
+using PlakStoreBusinessLayer.Concrete.NewFolder2;
 using PlakStoreViewModel.UserViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace PlakStoreSite.Controllers
             if (ModelState.IsValid)
             {
                 //post edılen data dogru data ıse
-               
+                ResultService<UserCreateVM> resultService = userService.Insert(user);
 
             }
             return View();
