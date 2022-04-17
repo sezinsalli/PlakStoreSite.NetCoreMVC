@@ -8,15 +8,18 @@ namespace PlakStoreViewModel.CartViewModels
 {
     public class Cart//SEPET
     {
-        private static Dictionary<int, CartItem> basket = new Dictionary<int, CartItem>();
+        private static Dictionary<int, CartItem> basket = new Dictionary<int, CartItem>(); 
+
         public List<CartItem> GetCartItems => basket.Values.ToList();
         public void Add(CartItem item)
         {
             if (basket.ContainsKey(item.ID))
             {
+                //eger bu ıdlı urun daha once eklenmısse quantıty bılgısını degıstırecegım o urune gıdıpç
                 basket[item.ID].Quantity += item.Quantity;
                 return;
             }
+            //eger eklenmemısse burada
             basket.Add(item.ID, item);
         }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using PlakStoreBusinessLayer.Abstract;
 using PlakStoreBusinessLayer.Concrete.NewFolder2;
 using PlakStoreViewModel.Constraints;
@@ -21,6 +22,7 @@ namespace PlakStoreSite.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            
             return View();
         }
         [HttpPost]
@@ -53,7 +55,19 @@ namespace PlakStoreSite.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-
+            //istek geldıgı vakıt
+            if (Request.Cookies["cookie"]!=null)
+            {
+                //egerkı boyle bır cookıe varsa
+                string bilgi = Request.Cookies["cookie"];
+                string[] bilgiParcasi=bilgi.Split("|");
+                UserLoginVM userLogin = new UserLoginVM();
+                userLogin.Email = bilgiParcasi[0];
+                userLogin.Password = bilgiParcasi[1];
+                userLogin.IsRemember = true;
+                return View(userLogin);
+                //şu kadar zamandır gelmedınız yazısı falan
+            }
             return View();
         }
         [HttpPost]
@@ -62,6 +76,10 @@ namespace PlakStoreSite.Controllers
             //cookıe olsuturuyoruz hatırlaması ıcın
             if (user.IsRemember)
             {
+                CookieOptions cookieoptions = new CookieOptions();
+                cookieoptions.Expires = DateTime.Now.AddDays(10);
+
+                Response.Cookies.Append("cookie", user.Email + "|" + user.Password, cookieoptions);
 
             }
             if (ModelState.IsValid)
