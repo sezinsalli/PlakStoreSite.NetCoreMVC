@@ -1,0 +1,48 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="hero-area">
+    <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(../../img/bg-img/bg-2.jpg);"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Discount</th>
+                                        <th>SubTotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.GetCartItems)
+                                    {
+                                        <tr>
+                                            <td>@item.Title </td>
+                                            <td>@item.Price </td>
+                                            <td><input type="number" value="@item.Quantity" min="0" /> </td>
+                                            <td>@item.Discount</td>
+                                            <td>@item.SubTotal</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

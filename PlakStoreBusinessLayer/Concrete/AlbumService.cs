@@ -16,8 +16,6 @@ namespace PlakStoreBusinessLayer.Concrete
     {
         IAlbumDAL albumDAL;
 
-        
-
         public AlbumService(IAlbumDAL albumDAL)
         {
             this.albumDAL = albumDAL;

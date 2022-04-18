@@ -10,7 +10,7 @@ namespace PlakStoreViewModel.CartViewModels
     {
         private static Dictionary<int, CartItem> basket = new Dictionary<int, CartItem>(); 
 
-        public List<CartItem> GetCartItems => basket.Values.ToList();
+        public List<CartItem> GetCartItems => basket.Values.ToList();//vıewde ulasmak ııcın public lıst yaptık @foreach (var item in Model.GetCartItems)
         public void Add(CartItem item)
         {
             if (basket.ContainsKey(item.ID))

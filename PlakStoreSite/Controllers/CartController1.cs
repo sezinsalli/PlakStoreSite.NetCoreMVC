@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using PlakStoreSite.Helpers;
 using Microsoft.AspNetCore.Http;
 using PlakStoreBusinessLayer.Abstract;
+using PlakStoreBusinessLayer.Concrete.NewFolder2;
+using PlakStoreViewModel.Constraints;
 
 namespace PlakStoreSite.Controllers
 {
@@ -19,19 +21,38 @@ namespace PlakStoreSite.Controllers
         {
             this.albumService = albumService;
         }
-        public IActionResult Index()
+
+        public IActionResult Index() //sepet sayfası
         {
-            return View();
+            Cart cart = HttpContext.Session.Get<Cart>("cart"); //sepetı ındex actıonda gosterelım
+            if (cart==null)
+            {
+                ViewBag.Message = CartMessage.CartBosHatasi;
+                return View();
+            }
+            return View(cart);
+            
         }
         public IActionResult AddToCard(int id)//sepete atacagım urunun ıdsı
         {
-            CartItem cartItem = new CartItem();//sepetı ac
-            Cart cart = new Cart();//urunu olsutur
-            //result servıce buraada kaldım
 
-            cart.Add(cartItem);//urunu sepete ekle
-            //.net sessıonda ıstedıgın nesneyı saklayabılırsın
-            HttpContext.Session.Set<Cart>("cart", cart);//sepetı sessıona kaydettım
+            Cart cart = HttpContext.Session.Get<Cart>("cart");
+            if (cart==null)
+            {
+                cart = new Cart();
+            }
+            
+            ResultService<CartItem> result = albumService.GetCartById(id);
+            if (!result.HasError)
+            {
+                CartItem item = result.Data;
+                item.Quantity = 1;
+                cart.Add(item);
+                
+                
+                HttpContext.Session.Set<Cart>("cart", cart);
+            }
+            
             return RedirectToAction("Index", "Home");
         }
     }
