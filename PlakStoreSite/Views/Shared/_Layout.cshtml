@@ -15,7 +15,7 @@
 
     <!-- Stylesheet -->
     <link href="~/style.css" rel="stylesheet" /> <!--tılda koy-->
-    
+
 
 </head>
 <body>
@@ -96,12 +96,21 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="login.html" id="loginBtn">Login / Register</a>
+                                        <a asp-action="Login" asp-controller="User" id="LoginBtn">Login</a>
+                                        <a asp-action="Register" asp-controller="User" id="LoginBtn">Register</a>
                                     </div>
 
                                     <!-- Cart Button -->
                                     <div class="cart-btn">
-                                        <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
+                                        @{
+                                            @using Microsoft.AspNetCore.Http;
+                                            @using PlakStoreSite.Helpers;
+                                             Cart cart = new Cart();
+                                            if (Context.Session.Get<Cart>("cart") != null)
+                                            {
+                                                cart = Context.Session.Get<Cart>("cart");
+                                            } }
+                                        <partial name="_cartButton" model="@cart.TotalQuantity" />
                                     </div>
                                 </div>
                             </div>
@@ -114,13 +123,13 @@
         </div>
     </header>
 
-    @RenderBody()    
+    @RenderBody()
     @if (ViewData["Title"].ToString() == "Contact")
     {
         @*@await Html.PartialAsync("_ContactAreaBlack", false);*@
         <partial name="_ContactAreaWhite" />
     }
-    else if(ViewData["Title"].ToString() != "Register")
+    else if (ViewData["Title"].ToString() != "Register")
     {
         <partial name="_ContactAreaBlack" />
     }
@@ -161,6 +170,6 @@
     <script src="~/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="~/js/active.js"></script>
-    @RenderSection("script",false)
+    @RenderSection("script", false)
 </body>
 </html>

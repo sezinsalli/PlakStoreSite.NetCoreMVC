@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@*sepet ıcın olusturuduk*@
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
         <!-- Single Hero Slide -->
@@ -26,7 +26,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tableData">
-                                    <partial name="_cartTable" model="@Model" />
+                                    <partial name="_CartTable" model="@Model" />
                                 </tbody>
                             </table>
                         </div>
@@ -36,4 +36,39 @@
         </div>
     </div>
 </section>
-
+@section scripts {
+    <script>
+        function CartUpdate(cartId, value) {
+            $.ajax({
+                type: "GET",
+                url: "/Cart/UpdateToCart",
+                data: {
+                    id: cartId,
+                    quantity: value
+                }
+            })
+                .done(function (cartTablePartial) {
+                    console.log("istek basarılı");
+                    console.log(cartTablePartial);
+                    $("#tableData").html(cartTablePartial);
+                    let totalQuantity = $("#Totalquantity").val();
+                    $(".quantity").text(totalQuantity)
+                });
+        }
+        function CartDelete(cartId) {
+            var cvp = confirm("Albumu silmek istiyor musunuz ?")
+            if (cvp) {
+                $.ajax({
+                    type: "GET",
+                    url: "/Cart/DeleteToCart",
+                    data: { id: cartId },
+                    success: function (data) {
+                        $("#tableData").html(data);
+                        let totalQuantity = $("#Totalquantity").val();
+                        $(".quantity").text(totalQuantity)
+                    }
+                });
+            }
+        }
+    </script>
+}

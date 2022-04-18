@@ -52,8 +52,23 @@ namespace PlakStoreSite.Controllers
                 
                 HttpContext.Session.Set<Cart>("cart", cart);
             }
-            
-            return RedirectToAction("Index", "Home");
+
+            return PartialView("_cartButton", cart.TotalQuantity);
+        }
+        public IActionResult UpdateCart(int id,short quantity)
+        {
+            Cart cart = HttpContext.Session.Get<Cart>("cart");//sepete aldım
+            cart.Update(id, quantity);//sepeti guncelledım
+            HttpContext.Session.Set<Cart>("cart", cart);//sepetın guncellenmıs halını sessıona yolla
+            //herhangı bır update ıstegı yapıldıgı zaman
+            return PartialView("_CartTable",cart); //table a bas
+        }
+        public IActionResult DeleteToCart(int id)
+        {
+            Cart cart = HttpContext.Session.Get<Cart>("cart");
+            cart.Delete(id);
+            HttpContext.Session.Set<Cart>("cart", cart);
+            return PartialView("_cartTable", cart);
         }
     }
 }
