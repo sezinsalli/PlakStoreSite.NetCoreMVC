@@ -25,17 +25,8 @@
                                         <th>SubTotal</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @foreach (var item in Model.GetCartItems)
-                                    {
-                                        <tr>
-                                            <td>@item.Title </td>
-                                            <td>@item.Price </td>
-                                            <td><input type="number" value="@item.Quantity" min="0" /> </td>
-                                            <td>@item.Discount</td>
-                                            <td>@item.SubTotal</td>
-                                        </tr>
-                                    }
+                                <tbody id="tableData">
+                                    <partial name="_cartTable" model="@Model" />
                                 </tbody>
                             </table>
                         </div>

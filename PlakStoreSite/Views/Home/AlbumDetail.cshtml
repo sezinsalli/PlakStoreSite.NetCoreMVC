@@ -22,11 +22,43 @@
                     <p>@Model.GenreName</p>
                     <p>@Model.ArtistFullName</p>
                     <div class="oneMusic-buttons-area mb-100">
-                        <a asp-action="AddToCart" asp-controller="Cart" asp-route-id="@Model.ID" class="btn oneMusic-btn m-2">Sepete Ekle<i class="fa fa-cart-plus"></i></a>
+                        <a id="sepeteEkle" data-id="@Model.ID" class="btn oneMusic-btn m-2">Sepete Ekle<i class="fa fa-cart-plus"></i></a>
+                        @*@<a asp-action="AddToCart" asp-controller="Cart" asp-route-id="@Model.ID" class="btn oneMusic-btn m-2">Sepete Ekle<i class="fa fa-cart-plus"></i></a>*@
 
                     </div>
                 </div>
         </div>
     </div>
 </section>
+
+@section scrpits
+{
+    <script>
+        @*let id = @ViewContext.RouteData.Values["id"]; //id'yi url'den de alabiliriz.*@
+
+        let buton = document.querySelector("#sepeteEkle");
+        let id = buton.getAttribute("data-id");
+        buton.addEventListener("click",AddCart)
+        /*button.click = AddCart; //aynı işlem üsttekiyle*/
+
+        function AddCart() {
+            $.ajax({
+                type: "GET",
+                url: "/Cart/AddToCart/" + id,
+                //contentType: "application/json; charset=utf-8",
+                //data:
+            })
+                .done(function (cartButtonPartial) {
+                    //istekten geri dönene yapılacak iş
+                    $(".cart-btn").html(cartButtonPartial);
+                    //istekten geri dönene yapılacak iş
+                })
+                .fail(function () {
+                    console.error("işlem başarısız")
+                    //istek başarısız dönerse yapılacak iş
+                });
+        }
+    </script>
+
+}
 
